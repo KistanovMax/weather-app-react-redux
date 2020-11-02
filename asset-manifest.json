@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/weather-app-react-redux/static/css/main.be0c771b.chunk.css",
+    "main.js": "/weather-app-react-redux/static/js/main.85d002e5.chunk.js",
+    "main.js.map": "/weather-app-react-redux/static/js/main.85d002e5.chunk.js.map",
+    "runtime-main.js": "/weather-app-react-redux/static/js/runtime-main.73203b7b.js",
+    "runtime-main.js.map": "/weather-app-react-redux/static/js/runtime-main.73203b7b.js.map",
+    "static/js/2.4bdf3f21.chunk.js": "/weather-app-react-redux/static/js/2.4bdf3f21.chunk.js",
+    "static/js/2.4bdf3f21.chunk.js.map": "/weather-app-react-redux/static/js/2.4bdf3f21.chunk.js.map",
+    "index.html": "/weather-app-react-redux/index.html",
+    "static/css/main.be0c771b.chunk.css.map": "/weather-app-react-redux/static/css/main.be0c771b.chunk.css.map",
+    "static/js/2.4bdf3f21.chunk.js.LICENSE.txt": "/weather-app-react-redux/static/js/2.4bdf3f21.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/weather-app-react-redux/static/media/Night.8b6e9d48.png",
+    "static/media/index.css": "/weather-app-react-redux/static/media/bg.f7d241bd.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.73203b7b.js",
+    "static/js/2.4bdf3f21.chunk.js",
+    "static/css/main.be0c771b.chunk.css",
+    "static/js/main.85d002e5.chunk.js"
+  ]
+}
