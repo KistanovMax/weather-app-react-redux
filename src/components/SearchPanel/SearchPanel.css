@@ -1,0 +1,39 @@
+.search {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  height: 45px;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%;
+}
+
+.search:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s;
+}
+
+.search:focus {
+  outline: none;
+  border: none;
+}
+
+.search::placeholder {
+  color: white;
+  font-size: 20px;
+}
+
+.search:focus::placeholder {
+  color: transparent;
+}
+
+.bi-search {
+  position: relative;
+  top: -35px;
+  left: 15px;
+}

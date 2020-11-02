@@ -1,0 +1,12 @@
+.date-card {
+  font-size: 26px;
+  text-align: start;
+  color: rgb(255, 255, 255);
+}
+
+.date-group {
+  margin: 15px 5px 0px;
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}

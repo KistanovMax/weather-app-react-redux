@@ -1,0 +1,40 @@
+.forecast-card {
+  margin-top: 25px;
+  display: flex;
+  color: white;
+  width: 345px;
+  overflow: auto;
+  height: 200px;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.forecast-spinner {
+  margin-top: 25px;
+  height: 200px;
+}
+
+.forecast-error-400 {
+  margin-top: 25px;
+  height: 200px;
+}

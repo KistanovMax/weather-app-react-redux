@@ -1,0 +1,35 @@
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  margin: 0 6px;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.forecast-item:hover {
+  border: 1px solid rgba(255, 255, 255);
+  transition: 0.2s;
+}
+
+.forecast-item:first-child {
+  margin-left: 0;
+}
+
+.forecast-item-date {
+}
+
+.forecast-item-time {
+}
+
+.forecast-item-temperature {
+  font-size: 34px;
+  margin-top: 8px;
+}
+
+.forecast-item-icon {
+  filter: brightness(4);
+  height: 75px;
+  width: 75px;
+}
