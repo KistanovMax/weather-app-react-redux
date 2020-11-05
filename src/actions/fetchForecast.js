@@ -1,5 +1,4 @@
 export function fetchForecast(cityName) {
-  //return the actual action to do
   return function (dispatch) {
     const API = {
       key: '4778a72e106d124b8c8551777889dd53',

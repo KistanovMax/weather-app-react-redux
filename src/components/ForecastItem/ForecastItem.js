@@ -1,5 +1,8 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import './ForecastItem.css';
+
+import { pressForecastItem } from '../../actions/pressForecastItem';
 
 export default function ForecastItem({
   temp,
@@ -7,7 +10,12 @@ export default function ForecastItem({
   month,
   day,
   hour,
+  description,
 }) {
+  const dispatch = useDispatch();
+  const clickItem = (temp, icon, description) =>
+    dispatch(pressForecastItem(temp, icon, description));
+
   const date = new Date();
   const currentDate = `${
     date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
@@ -19,7 +27,10 @@ export default function ForecastItem({
   }
 
   return (
-    <div className='forecast-item'>
+    <div
+      onClick={() => clickItem(temp, icon, description)}
+      className='forecast-item'
+    >
       <div className='forecast-item-date'>{forecastDate}</div>
       <div className='forecast-item-time'>
         {hour}

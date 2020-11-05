@@ -1,5 +1,4 @@
 export function fetchWeather(cityName) {
-  //return the actual action to do
   return function (dispatch) {
     const API = {
       key: '4778a72e106d124b8c8551777889dd53',
@@ -16,7 +15,13 @@ export function fetchWeather(cityName) {
         // console.log(result);
         dispatch({
           type: 'FETCH_WEATHER',
-          payload: result,
+          payload: (result = {
+            name: result.name,
+            country: result.sys.country,
+            temp: result.main.temp,
+            icon: result.weather[0].icon,
+            description: result.weather[0].main,
+          }),
         });
       })
       .catch((err) => {

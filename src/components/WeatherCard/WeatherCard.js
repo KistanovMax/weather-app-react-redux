@@ -8,7 +8,15 @@ export default function WeatherCard() {
     (state) => state.Weather.weather
   );
 
-  const { name, sys, main, weather } = weatherSelector;
+  // console.log(weatherSelector);
+
+  // console.log(
+  //   weatherSelector.name,
+  //   weatherSelector.country,
+  //   weatherSelector.temp,
+  //   weatherSelector.icon,
+  //   weatherSelector.description,
+  // );
 
   if (weatherSelector.cod === '400') {
     return (
@@ -39,7 +47,7 @@ export default function WeatherCard() {
   } else {
     return (
       <div className='weather-card'>
-        {main ? (
+        {weatherSelector.temp ? (
           <div>
             <div className='city'>
               <svg
@@ -55,22 +63,23 @@ export default function WeatherCard() {
                   d='M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'
                 />
               </svg>
-              {name} <sup>{sys.country}</sup>
+              {weatherSelector.name}{' '}
+              <sup>{weatherSelector.country}</sup>
             </div>
             <div>
               <div className='weather'>
                 <div className='temperature'>
-                  {Math.round(main.temp)}
+                  {Math.round(weatherSelector.temp)}
                   <span>&deg;</span>
                 </div>
                 <div className='weather-type'>
                   <img
                     className='weather-icon'
-                    src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}
+                    src={`http://openweathermap.org/img/wn/${weatherSelector.icon}@2x.png`}
                     alt='weather-icon'
                   />
                   <div className='weather-main'>
-                    {weather[0].main}
+                    {weatherSelector.description}
                   </div>
                 </div>
               </div>

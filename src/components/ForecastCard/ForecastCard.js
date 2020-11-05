@@ -3,12 +3,13 @@ import { useSelector } from 'react-redux';
 import ForecastItem from '../ForecastItem/ForecastItem';
 import './ForecastCard.css';
 
-export default function ForecastCard({ cityName }) {
+export default function ForecastCard() {
   const forecastSelector = useSelector(
     (state) => state.Forecast.forecast
   );
 
   const { city, list } = forecastSelector;
+
   if (forecastSelector.cod === '400') {
     return <div className='forecast-error-400'></div>;
   } else {
@@ -20,6 +21,7 @@ export default function ForecastCard({ cityName }) {
               <ForecastItem
                 key={item.dt}
                 temp={Math.round(item.main.temp)}
+                description={item.weather[0].main}
                 icon={item.weather[0].icon}
                 month={item.dt_txt.slice(5, 7)}
                 day={item.dt_txt.slice(8, 10)}
