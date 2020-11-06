@@ -1,28 +1,18 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import './ForecastItem.css';
 
-import { pressForecastItem } from '../../actions/pressForecastItem';
-
 export default function ForecastItem({
+  name,
+  country,
   temp,
   icon,
   month,
   day,
   hour,
   description,
+  clickItem,
 }) {
-  const weatherSelector = useSelector(
-    (state) => state.Weather.weather
-  );
-
-  const name = weatherSelector.name;
-  const country = weatherSelector.country;
-
-  const dispatch = useDispatch();
-  const clickItem = (name, country, temp, icon, description) =>
-    dispatch(pressForecastItem(name, country, temp, icon, description));
-
+  
   const date = new Date();
   const currentDate = `${
     date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
@@ -35,7 +25,9 @@ export default function ForecastItem({
 
   return (
     <div
-      onClick={() => clickItem(name, country, temp, icon, description)}
+      onClick={() =>
+        clickItem(name, country, temp, icon, description)
+      }
       className='forecast-item'
     >
       <div className='forecast-item-date'>{forecastDate}</div>

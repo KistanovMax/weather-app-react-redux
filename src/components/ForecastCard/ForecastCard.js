@@ -1,21 +1,28 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import ForecastItem from '../ForecastItem/ForecastItem';
 import './ForecastCard.css';
 
+import { pressForecastItem } from '../../actions/pressForecastItem';
+
 export default function ForecastCard() {
-  const forecastSelector = useSelector(
+  const { cod, name, country, list } = useSelector(
     (state) => state.Forecast.forecast
   );
 
-  const { city, list } = forecastSelector;
+  const dispatch = useDispatch();
+  const clickItem = (name, country, temp, icon, description) =>
+    dispatch(
+      pressForecastItem(name, country, temp, icon, description)
+    );
 
-  if (forecastSelector.cod === '400') {
+
+  if (cod === '400') {
     return <div className='forecast-error-400'></div>;
   } else {
     return (
       <div>
-        {city ? (
+        {country ? (
           <div className='forecast-card'>
             {list.map((item) => (
               <ForecastItem
@@ -26,6 +33,9 @@ export default function ForecastCard() {
                 month={item.dt_txt.slice(5, 7)}
                 day={item.dt_txt.slice(8, 10)}
                 hour={item.dt_txt.slice(11, 13) * 1}
+                name={name}
+                country={country}
+                clickItem={clickItem}
               />
             ))}
           </div>

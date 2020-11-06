@@ -16,6 +16,7 @@ export function fetchWeather(cityName) {
         dispatch({
           type: 'FETCH_WEATHER',
           payload: (result = {
+            cod: result.cod,
             name: result.name,
             country: result.sys.country,
             temp: result.main.temp,
