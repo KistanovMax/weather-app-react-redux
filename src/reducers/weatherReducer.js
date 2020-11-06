@@ -1,12 +1,6 @@
 const fetchWeather = (
   state = {
-    weather: {
-      name: null,
-      country: null,
-      temp: null,
-      icon: null,
-      description: null,
-    },
+    weather: {},
   },
   action
 ) => {
