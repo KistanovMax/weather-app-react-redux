@@ -16,7 +16,6 @@ export function fetchForecast(cityName) {
         dispatch({
           type: 'FETCH_FORECAST',
           payload: (result = {
-            cod: result.cod,
             name: result.city.name,
             country: result.city.country,
             list: result.list,
@@ -25,6 +24,12 @@ export function fetchForecast(cityName) {
       })
       .catch((err) => {
         console.log(err);
+        dispatch({
+          type: 'FETCH_FORECAST',
+          payload: (err = {
+            error: err.name,
+          }),
+        });
       });
   };
 }

@@ -4,14 +4,18 @@ import Spinner from 'react-bootstrap/Spinner';
 import './WeatherCard.css';
 
 export default function WeatherCard() {
-  const { cod, name, country, temp, icon, description } = useSelector(
-    (state) => state.Weather.weather
-  );
+  const {
+    error,
+    name,
+    country,
+    temp,
+    icon,
+    description,
+  } = useSelector((state) => state.Weather.weather);
 
-
-  if (cod === '400') {
+  if (error === 'TypeError') {
     return (
-      <div className='error-400'>
+      <div className='error'>
         <div className='frown-emoji'>
           <svg
             width='1.5em'
@@ -32,7 +36,8 @@ export default function WeatherCard() {
             <path d='M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z' />
           </svg>
         </div>
-        Sorry, the specified city was not found..
+        Sorry !<br></br>
+        Perhaps you entered an invalid request ..
       </div>
     );
   } else {
@@ -76,10 +81,7 @@ export default function WeatherCard() {
         ) : (
           <div className='spinner'>
             <Spinner animation='border' variant='light' />{' '}
-            <div className='spinner-text'>Loading</div>
-            <div className='spinner-text-2'>
-              *perhaps you entered an invalid request
-            </div>
+            <div className='spinner-text'>Loading..</div>
           </div>
         )}
       </div>

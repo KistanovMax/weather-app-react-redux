@@ -6,7 +6,7 @@ import './ForecastCard.css';
 import { pressForecastItem } from '../../actions/pressForecastItem';
 
 export default function ForecastCard() {
-  const { cod, name, country, list } = useSelector(
+  const { error, name, country, list } = useSelector(
     (state) => state.Forecast.forecast
   );
 
@@ -16,8 +16,7 @@ export default function ForecastCard() {
       pressForecastItem(name, country, temp, icon, description)
     );
 
-
-  if (cod === '400') {
+  if (error === 'TypeError') {
     return <div className='forecast-error-400'></div>;
   } else {
     return (

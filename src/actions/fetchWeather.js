@@ -16,7 +16,6 @@ export function fetchWeather(cityName) {
         dispatch({
           type: 'FETCH_WEATHER',
           payload: (result = {
-            cod: result.cod,
             name: result.name,
             country: result.sys.country,
             temp: result.main.temp,
@@ -27,6 +26,12 @@ export function fetchWeather(cityName) {
       })
       .catch((err) => {
         console.log(err);
+        dispatch({
+          type: 'FETCH_WEATHER',
+          payload: (err = {
+            error: err.name,
+          }),
+        });
       });
   };
 }
