@@ -17,14 +17,13 @@ export default function DateCard() {
     'December',
   ];
   const weekDayArr = [
-    'plug',
+    'Sunday',
     'Monday',
     'Tuesday',
     'Wednesday',
     'Thursday',
     'Friday',
     'Saturday',
-    'Sunday',
   ];
   const date = new Date();
   const currentDate = `${date.getDate()} ${

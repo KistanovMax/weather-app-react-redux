@@ -1,4 +1,5 @@
 .weather-card {
+  margin-top: 20px;
   border-radius: 5px;
   height: 250px;
 }
