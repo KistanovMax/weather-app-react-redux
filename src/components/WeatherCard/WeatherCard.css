@@ -3,6 +3,7 @@
   height: 400px;
   width: 555px;
   padding: 15px;
+  border: 1px solid white;
 }
 
 .city {
@@ -19,12 +20,16 @@
 .weather {
   display: flex;
   justify-content: space-around;
+  margin-top: 30px;
+  height: 250px;
 }
 
 .temperature {
-  padding-left: 5px;
+  padding-top: 15px;
+  padding-left: 70px;
   font-size: 150px;
   color: white;
+  flex-grow: 1;
 }
 
 .temperature span {
@@ -39,7 +44,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 55px;
+  padding-right: 70px;
 }
 
 .weather-main {
@@ -50,4 +56,25 @@
 
 .weather-icon {
   filter: brightness(4);
+}
+
+.info-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.info-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.2s;
+}
+
+.info-button:focus {
+  outline: none;
+  border: none;
 }

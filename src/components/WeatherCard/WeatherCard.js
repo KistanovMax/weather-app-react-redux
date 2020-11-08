@@ -52,6 +52,7 @@ export default function WeatherCard() {
                   />
                   <div className='weather-main'>{description}</div>
                 </div>
+                <button className='info-button'> {'>'} </button>
               </div>
             </div>
           </div>
