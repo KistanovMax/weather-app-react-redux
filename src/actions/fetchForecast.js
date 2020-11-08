@@ -29,6 +29,7 @@ export function fetchForecast(cityName) {
               name: result.city.name,
               country: result.city.country,
               list: result.list,
+              error: '',
             }),
           });
         }

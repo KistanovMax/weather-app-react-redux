@@ -1,12 +1,18 @@
 .date-card {
-  font-size: 26px;
-  text-align: start;
-  color: rgb(255, 255, 255);
+  font-size: 28px;
+  color: white;
 }
 
 .date-group {
-  margin: 15px 5px 0px;
   display: flex;
-  flex-direction: column;
-  text-align: end;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.week-day {
+  margin-right: 10px;
+}
+
+.date-group svg {
+  margin-right: 10px;
 }

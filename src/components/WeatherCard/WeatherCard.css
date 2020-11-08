@@ -1,47 +1,49 @@
 .weather-card {
   border-radius: 5px;
-  height: 250px;
+  height: 400px;
+  width: 555px;
+  padding: 15px;
 }
 
 .city {
   text-align: center;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 20px;
   color: white;
   text-transform: uppercase;
 }
 
 .city svg {
-  margin-right: 3px;
+  margin-right: 5px;
   margin-bottom: 3px;
 }
 .weather {
   display: flex;
   justify-content: space-around;
-  margin-top: 15px;
 }
 
 .temperature {
   padding-left: 5px;
-  font-size: 110px;
+  font-size: 150px;
   color: white;
 }
 
 .temperature span {
-  font-size: 75px;
+  font-size: 90px;
   color: white;
-  vertical-align: top;
+  position: relative;
+  top: -50px;
+  left: -15px;
 }
 
 .weather-type {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10px;
+  padding-top: 40px;
 }
 
 .weather-main {
-  font-size: 18px;
+  font-size: 20px;
   color: white;
   text-transform: uppercase;
 }

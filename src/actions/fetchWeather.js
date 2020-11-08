@@ -31,7 +31,7 @@ export function fetchWeather(cityName) {
               temp: result.main.temp,
               icon: result.weather[0].icon,
               description: result.weather[0].main,
-              errorMessage: '',
+              error: '',
             }),
           });
         }

@@ -24,8 +24,8 @@ export default function WeatherCard() {
           <div>
             <div className='city'>
               <svg
-                width='0.8em'
-                height='0.8em'
+                width='1em'
+                height='1em'
                 viewBox='0 0 16 16'
                 className='bi bi-geo-alt-fill'
                 fill='currentColor'

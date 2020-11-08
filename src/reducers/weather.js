@@ -2,7 +2,6 @@ const initialState = {
   weather: {},
   loading: false,
   loaded: false,
-  error: null,
 };
 
 const fetchWeather = (state = initialState, action) => {
@@ -11,7 +10,6 @@ const fetchWeather = (state = initialState, action) => {
       return (state = {
         ...state,
         loading: true,
-        error: null,
       });
     case 'FETCH_WEATHER_SUCCESS':
       return (state = {
@@ -19,13 +17,6 @@ const fetchWeather = (state = initialState, action) => {
         weather: action.payload,
         loading: false,
         loaded: true,
-      });
-    case 'FETCH_WEATHER_ERROR':
-      return (state = {
-        ...state,
-        error: action.payload,
-        loading: false,
-        loaded: false,
       });
     case 'PRESS_FORECAST_ITEM':
       return (state = {

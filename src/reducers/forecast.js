@@ -2,7 +2,6 @@ const initialState = {
   forecast: {},
   loading: false,
   loaded: false,
-  error: null,
 };
 
 const fetchForecast = (state = initialState, action) => {
@@ -11,7 +10,6 @@ const fetchForecast = (state = initialState, action) => {
       return (state = {
         ...state,
         loading: true,
-        error: null,
       });
     case 'FETCH_FORECAST_SUCCESS':
       return (state = {
@@ -19,13 +17,6 @@ const fetchForecast = (state = initialState, action) => {
         forecast: action.payload,
         loading: false,
         loaded: true,
-      });
-    case 'FETCH_FORECAST_ERROR':
-      return (state = {
-        ...state,
-        error: action.payload,
-        loading: false,
-        loaded: false,
       });
     default:
       return state;

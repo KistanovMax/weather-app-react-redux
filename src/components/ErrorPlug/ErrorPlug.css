@@ -1,13 +1,12 @@
 .error {
-   text-align: center;
-   color: white;
-   font-size: 18px;
-   padding-top: 70px;
-   height: 250px;
-   text-transform: uppercase;
- }
- 
- .frown-emoji {
-   margin-bottom: 10px;
- }
- 
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  padding-top: 100px;
+  height: 400px;
+  text-transform: uppercase;
+}
+
+.frown-emoji {
+  padding-bottom: 10px;
+}

@@ -1,16 +1,15 @@
 .container {
-  background: url(/src/img/After\ Noon.png) no-repeat center top;
-  width: 375px;
-  height: 667px;
+  width: 1500px;
+  height: 800px;
   border-radius: 15px;
-  margin-top: 80px;
+  margin-top: 60px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.night {
-  background: url(../../img/Night.png) no-repeat center top;
-  width: 375px;
-  height: 667px;
-  border-radius: 15px;
+.header-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
 }
