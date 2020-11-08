@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import forecastReducer from './forecastReducer';
-import weatherReducer from './weatherReducer';
+import forecast from './forecast';
+import weather from './weather';
 
 const reducers = combineReducers({
-  Forecast: forecastReducer,
-  Weather: weatherReducer,
+  Forecast: forecast,
+  Weather: weather,
 });
 
 export default reducers;
