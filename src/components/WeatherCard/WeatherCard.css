@@ -49,31 +49,3 @@
 .weather-icon {
   filter: brightness(4);
 }
-
-.spinner {
-  text-align: center;
-  color: white;
-  font-size: 30px;
-  padding-top: 60px;
-  height: 250px;
-}
-
-.error-400 {
-  text-align: center;
-  color: white;
-  font-size: 24px;
-  padding-top: 70px;
-  height: 250px;
-}
-
-.frown-emoji {
-  margin-bottom: 10px;
-}
-
-.spinner-text {
-  margin-top: 10px;
-}
-
-.spinner-text-2 {
-  font-size: 16px;
-}

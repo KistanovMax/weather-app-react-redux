@@ -29,12 +29,7 @@
   border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
-.forecast-spinner {
-  margin-top: 25px;
-  height: 200px;
-}
-
-.forecast-error-400 {
+.plug {
   margin-top: 25px;
   height: 200px;
 }
