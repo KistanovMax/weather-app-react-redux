@@ -4,18 +4,13 @@ import Spinner from 'react-bootstrap/Spinner';
 import './WeatherCard.css';
 
 export default function WeatherCard() {
-  const {
-    error,
-    name,
-    country,
-    temp,
-    icon,
-    description,
-  } = useSelector((state) => state.Weather.weather);
+  const weatherSelector = useSelector(
+    (state) => state.Weather.weather
+  );
 
-  if (error === 'TypeError') {
+  if (weatherSelector.cod === '400') {
     return (
-      <div className='error'>
+      <div className='error-400'>
         <div className='frown-emoji'>
           <svg
             width='1.5em'
@@ -36,14 +31,13 @@ export default function WeatherCard() {
             <path d='M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z' />
           </svg>
         </div>
-        Sorry !<br></br>
-        Perhaps you entered an invalid request ..
+        Sorry, the specified city was not found..
       </div>
     );
   } else {
     return (
       <div className='weather-card'>
-        {icon ? (
+        {weatherSelector.country ? (
           <div>
             <div className='city'>
               <svg
@@ -59,21 +53,24 @@ export default function WeatherCard() {
                   d='M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'
                 />
               </svg>
-              {name} <sup>{country}</sup>
+              {weatherSelector.name}{' '}
+              <sup>{weatherSelector.country}</sup>
             </div>
             <div>
               <div className='weather'>
                 <div className='temperature'>
-                  {Math.round(temp)}
+                  {Math.round(weatherSelector.temp)}
                   <span>&deg;</span>
                 </div>
                 <div className='weather-type'>
                   <img
                     className='weather-icon'
-                    src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
+                    src={`http://openweathermap.org/img/wn/${weatherSelector.icon}@2x.png`}
                     alt='weather-icon'
                   />
-                  <div className='weather-main'>{description}</div>
+                  <div className='weather-main'>
+                    {weatherSelector.description}
+                  </div>
                 </div>
               </div>
             </div>
@@ -81,7 +78,10 @@ export default function WeatherCard() {
         ) : (
           <div className='spinner'>
             <Spinner animation='border' variant='light' />{' '}
-            <div className='spinner-text'>Loading..</div>
+            <div className='spinner-text'>Loading</div>
+            <div className='spinner-text-2'>
+              *perhaps you entered an invalid request
+            </div>
           </div>
         )}
       </div>

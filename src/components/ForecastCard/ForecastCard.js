@@ -6,7 +6,7 @@ import './ForecastCard.css';
 import { pressForecastItem } from '../../actions/pressForecastItem';
 
 export default function ForecastCard() {
-  const { error, name, country, list } = useSelector(
+  const forecastSelector = useSelector(
     (state) => state.Forecast.forecast
   );
 
@@ -16,15 +16,19 @@ export default function ForecastCard() {
       pressForecastItem(name, country, temp, icon, description)
     );
 
-  if (error === 'TypeError') {
+  const { city, list } = forecastSelector;
+
+  if (forecastSelector.cod === '400') {
     return <div className='forecast-error-400'></div>;
   } else {
     return (
       <div>
-        {country ? (
+        {city ? (
           <div className='forecast-card'>
             {list.map((item) => (
               <ForecastItem
+                name={city.name}
+                country={city.country}
                 key={item.dt}
                 temp={Math.round(item.main.temp)}
                 description={item.weather[0].main}
@@ -32,8 +36,6 @@ export default function ForecastCard() {
                 month={item.dt_txt.slice(5, 7)}
                 day={item.dt_txt.slice(8, 10)}
                 hour={item.dt_txt.slice(11, 13) * 1}
-                name={name}
-                country={country}
                 clickItem={clickItem}
               />
             ))}

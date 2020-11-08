@@ -26,12 +26,6 @@ export function fetchWeather(cityName) {
       })
       .catch((err) => {
         console.log(err);
-        dispatch({
-          type: 'FETCH_WEATHER',
-          payload: (err = {
-            error: err.name,
-          }),
-        });
       });
   };
 }

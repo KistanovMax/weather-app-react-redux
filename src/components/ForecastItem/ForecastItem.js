@@ -12,7 +12,6 @@ export default function ForecastItem({
   description,
   clickItem,
 }) {
-  
   const date = new Date();
   const currentDate = `${
     date.getDate() < 10 ? '0' + date.getDate() : date.getDate()

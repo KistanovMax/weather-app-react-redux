@@ -15,6 +15,7 @@ const fetchWeather = (
         ...state,
         weather: action.payload,
       });
+
     default:
       return state;
   }
