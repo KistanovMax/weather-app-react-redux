@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import ErrorPlug from '../ErrorPlug/ErrorPlug';
 import SpinnerItem from '../Loader/Loader';
@@ -6,6 +6,7 @@ import SpinnerItem from '../Loader/Loader';
 import './WeatherCard.css';
 
 export default function WeatherCard() {
+  const [showInfo, setShowInfo] = useState(false);
   const {
     name,
     country,
@@ -14,6 +15,10 @@ export default function WeatherCard() {
     description,
     error,
   } = useSelector((state) => state.Weather.weather);
+
+  const toogleInfoButton = useCallback(() => {
+    setShowInfo((showInfo) => !showInfo);
+  }, []);
 
   if (error) {
     return <ErrorPlug error={error} />;
@@ -52,7 +57,12 @@ export default function WeatherCard() {
                   />
                   <div className='weather-main'>{description}</div>
                 </div>
-                <button className='info-button'> {'>'} </button>
+                <button
+                  onClick={toogleInfoButton}
+                  className='info-button'
+                >
+                  {showInfo ? '<' : '>'}
+                </button>
               </div>
             </div>
           </div>

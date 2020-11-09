@@ -18,7 +18,7 @@ const fetchWeather = (state = initialState, action) => {
         loading: false,
         loaded: true,
       });
-    case 'PRESS_FORECAST_ITEM':
+    case 'CLICK_FORECAST_ITEM':
       return (state = {
         ...state,
         weather: action.payload,

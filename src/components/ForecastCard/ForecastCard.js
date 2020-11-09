@@ -3,21 +3,21 @@ import { useSelector, useDispatch } from 'react-redux';
 import ForecastItem from '../ForecastItem/ForecastItem';
 import './ForecastCard.css';
 
-import { pressForecastItem } from '../../actions/pressForecastItem';
+import { clickForecastItem } from '../../actions/clickForecastItem';
 
 export default function ForecastCard() {
-  const {error, name, country, list } = useSelector(
+  const { error, name, country, list } = useSelector(
     (state) => state.Forecast.forecast
   );
 
   const dispatch = useDispatch();
   const clickItem = (name, country, temp, icon, description) =>
     dispatch(
-      pressForecastItem(name, country, temp, icon, description)
+      clickForecastItem(name, country, temp, icon, description)
     );
 
   if (error) {
-    return <div className='plug'></div>
+    return <div className='plug'></div>;
   } else {
     return (
       <div>

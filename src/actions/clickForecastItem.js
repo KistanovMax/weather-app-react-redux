@@ -1,4 +1,4 @@
-export const pressForecastItem = (
+export const clickForecastItem = (
   name,
   country,
   temp,
@@ -7,7 +7,7 @@ export const pressForecastItem = (
 ) => {
   // console.log(`clicked ${name} ${country} ${temp} ${icon} ${description}`);
   return {
-    type: 'PRESS_FORECAST_ITEM',
+    type: 'CLICK_FORECAST_ITEM',
     payload: { name, country, temp, icon, description },
   };
 };
