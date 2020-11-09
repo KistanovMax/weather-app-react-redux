@@ -6,9 +6,11 @@ import './ForecastCard.css';
 import { clickForecastItem } from '../../actions/clickForecastItem';
 
 export default function ForecastCard() {
-  const { error, name, country, list } = useSelector(
-    (state) => state.Forecast.forecast
-  );
+  const {
+    forecast: { error, name, country, list },
+    loading,
+    loaded,
+  } = useSelector((state) => state.Forecast);
 
   const dispatch = useDispatch();
   const clickItem = (name, country, temp, icon, description) =>
@@ -21,7 +23,7 @@ export default function ForecastCard() {
   } else {
     return (
       <div>
-        {name ? (
+        {!loading && loaded ? (
           <div className='forecast-card'>
             {list.map((item) => (
               <ForecastItem

@@ -14,7 +14,7 @@ export function fetchWeather(cityName) {
         return res.json();
       })
       .then((result) => {
-        // console.log(result);
+        console.log(result);
         if (result.message) {
           dispatch({
             type: 'FETCH_WEATHER_SUCCESS',
@@ -31,6 +31,13 @@ export function fetchWeather(cityName) {
               temp: result.main.temp,
               icon: result.weather[0].icon,
               description: result.weather[0].main,
+              feels: result.main.feels_like,
+              tempMax: result.main.temp_max,
+              tempMin: result.main.temp_min,
+              wind: result.wind.speed,
+              humidity: result.main.humidity,
+              pressure: result.main.pressure,
+              visibility: result.visibility,
               error: '',
             }),
           });

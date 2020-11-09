@@ -1,15 +1,20 @@
+.weather-details {
+  display: flex;
+  justify-content: space-between;
+}
+
 .weather-card {
   border-radius: 5px;
   height: 400px;
-  width: 555px;
+  width: 400px;
   padding: 15px;
   border: 1px solid white;
+  color: white;
 }
 
 .city {
   text-align: center;
   font-size: 20px;
-  color: white;
   text-transform: uppercase;
 }
 
@@ -26,15 +31,12 @@
 
 .temperature {
   padding-top: 15px;
-  padding-left: 70px;
   font-size: 150px;
-  color: white;
   flex-grow: 1;
 }
 
 .temperature span {
   font-size: 90px;
-  color: white;
   position: relative;
   top: -50px;
   left: -15px;
@@ -45,12 +47,10 @@
   flex-direction: column;
   align-items: center;
   padding-top: 55px;
-  padding-right: 70px;
 }
 
 .weather-main {
   font-size: 20px;
-  color: white;
   text-transform: uppercase;
 }
 
@@ -58,22 +58,13 @@
   filter: brightness(4);
 }
 
-.info-button {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: rgba(255, 255, 255, 0.75);
-  text-align: center;
-  border-radius: 10px;
-  margin-top: 15px;
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.info-button:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.info-button:focus {
-  outline: none;
-  border: none;
+.details-card {
+  border-radius: 5px;
+  height: 400px;
+  width: 400px;
+  padding: 15px;
+  border: 1px solid white;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
 }
