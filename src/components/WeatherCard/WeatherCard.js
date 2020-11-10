@@ -7,6 +7,7 @@ import './WeatherCard.css';
 
 function WeatherCard() {
   const [showDetails, setShowDetails] = useState(false);
+  const [IsCelsius, setIsCelsius] = useState(false);
   const {
     weather: {
       name,
@@ -27,7 +28,11 @@ function WeatherCard() {
     loaded,
   } = useSelector((state) => state.Weather);
 
-  const toogleShowDetails = useCallback(() => {
+  const tooggleTempType = useCallback(() => {
+    setIsCelsius(!IsCelsius);
+  }, [IsCelsius]);
+
+  const tooggleShowDetails = useCallback(() => {
     setShowDetails(!showDetails);
   }, [showDetails]);
 
@@ -59,9 +64,11 @@ function WeatherCard() {
                 <div>
                   <div className='weather'>
                     <div className='temp-block'>
-                      <div className='temp'>
-                        {Math.round(temp)}
-                        <span>&deg;</span>
+                      <div className='temp' onClick={tooggleTempType}>
+                        {IsCelsius
+                          ? Math.round((temp * 9) / 5 + 32)
+                          : Math.round(temp)}
+                        <span>&deg;{IsCelsius ? 'F' : 'C'}</span>
                       </div>
                       <div className='min-temp'>
                         min
@@ -80,7 +87,9 @@ function WeatherCard() {
                           <path d='M8.25 2a.25.25 0 0 0-.5 0v9.02a1.514 1.514 0 0 1 .5 0V2z' />
                           <path d='M9.5 12.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z' />
                         </svg>
-                        {Math.round(tempMin)}
+                        {IsCelsius
+                          ? Math.round((tempMin * 9) / 5 + 32)
+                          : Math.round(tempMin)}
                         <span>&deg;</span>
                       </div>
                       <div className='max-temp'>
@@ -100,7 +109,9 @@ function WeatherCard() {
                           <path d='M8.25 2a.25.25 0 0 0-.5 0v9.02a1.514 1.514 0 0 1 .5 0V2z' />
                           <path d='M9.5 12.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z' />
                         </svg>
-                        {Math.round(tempMax)}
+                        {IsCelsius
+                          ? Math.round((tempMax * 9) / 5 + 32)
+                          : Math.round(tempMax)}
                         <span>&deg;</span>
                       </div>
                     </div>
@@ -122,25 +133,26 @@ function WeatherCard() {
             {showDetails && (
               <div className='details-card'>
                 <div className='details-item'>
-                  Feels like <span>{Math.round(feels)} </span>
+                  Feels like <span>{Math.round(feels)}&deg;c</span>
                 </div>
                 <div className='details-item'>
-                   Wind speed <span> {Number(wind).toFixed(1)}</span>
+                  Wind speed{' '}
+                  <span> {Number(wind).toFixed(1)} m/s</span>
                 </div>
                 <div className='details-item'>
-                  Humidity <span>{humidity}</span>
+                  Humidity <span>{humidity} %</span>
                 </div>
                 <div className='details-item'>
-                  Pressure <span>{pressure}</span>
+                  Pressure <span>{pressure} hPa</span>
                 </div>
                 <div className='details-item'>
-                  Visibility <span>{visibility}</span>
+                  Visibility <span>{visibility} m</span>
                 </div>
               </div>
             )}
             <button
               className='details-button'
-              onClick={toogleShowDetails}
+              onClick={tooggleShowDetails}
             >
               {showDetails ? 'Hide Details' : 'Show Details'}
             </button>

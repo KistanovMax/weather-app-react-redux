@@ -66,6 +66,7 @@
   flex-direction: column;
   align-items: center;
   padding-top: 80px;
+  padding-right: 50px;
 }
 
 .weather-main {
@@ -84,11 +85,12 @@
   justify-content: space-around;
   border-radius: 5px;
   height: 400px;
+  width: 500px;
   padding: 15px;
   color: white;
   font-size: 18px;
   text-transform: uppercase;
-  padding-right: 80px;
+  padding-right: 90px;
 }
 
 .details-item {
@@ -101,17 +103,18 @@
   height: 115px;
   border-radius: 10px;
   padding: 5px;
-  text-align: center;
 }
 
 .details-item span {
-  font-size: 35px;
+  font-size: 24px;
 }
 
 .details-button {
+  align-self: flex-end;
+  margin-bottom: 17px;
   max-width: 70px;
   min-width: 70px;
-  height: 365px;
+  height: 70px;
   border-radius: 10px;
   border: none;
   background-color: rgba(255, 255, 255, 0.2);
