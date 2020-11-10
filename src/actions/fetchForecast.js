@@ -19,7 +19,7 @@ export function fetchForecast(cityName) {
           dispatch({
             type: 'FETCH_FORECAST_SUCCESS',
             payload: {
-              error: result.message,
+              errorMessage: result.message,
             },
           });
         } else {
@@ -29,7 +29,7 @@ export function fetchForecast(cityName) {
               name: result.city.name,
               country: result.city.country,
               list: result.list,
-              error: '',
+              errorMessage: '',
             }),
           });
         }

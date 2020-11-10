@@ -3,13 +3,30 @@ export const clickForecastItem = (
   country,
   temp,
   icon,
-  description
+  description,
+  feels,
+  tempMax,
+  tempMin,
+  wind,
+  humidity,
+  pressure,
+  visibility
 ) => {
-  // console.log(`clicked ${name} ${country} ${temp} ${icon} ${description}`);
   return {
     type: 'CLICK_FORECAST_ITEM',
-    payload: { name, country, temp, icon, description },
+    payload: {
+      name,
+      country,
+      temp,
+      icon,
+      description,
+      feels,
+      tempMax,
+      tempMin,
+      wind,
+      humidity,
+      pressure,
+      visibility,
+    },
   };
 };
-
-// name, country, temp, icon, description

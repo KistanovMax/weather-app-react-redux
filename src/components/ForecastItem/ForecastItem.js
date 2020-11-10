@@ -11,6 +11,13 @@ export default function ForecastItem({
   hour,
   description,
   clickItem,
+  feels,
+  tempMax,
+  tempMin,
+  wind,
+  humidity,
+  pressure,
+  visibility,
 }) {
   const date = new Date();
   const currentDate = `${
@@ -25,7 +32,20 @@ export default function ForecastItem({
   return (
     <div
       onClick={() =>
-        clickItem(name, country, temp, icon, description)
+        clickItem(
+          name,
+          country,
+          temp,
+          icon,
+          description,
+          feels,
+          tempMax,
+          tempMin,
+          wind,
+          humidity,
+          pressure,
+          visibility
+        )
       }
       className='forecast-item'
     >

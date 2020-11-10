@@ -1,14 +1,15 @@
 .weather-details {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .weather-card {
   border-radius: 5px;
   height: 400px;
-  width: 400px;
+  width: 100%;
+  min-width: 400px;
   padding: 15px;
-  border: 1px solid white;
   color: white;
 }
 
@@ -25,32 +26,50 @@
 .weather {
   display: flex;
   justify-content: space-around;
-  margin-top: 30px;
+  padding-top: 30px 40px 40px 0px;
   height: 250px;
 }
 
-.temperature {
-  padding-top: 15px;
-  font-size: 150px;
-  flex-grow: 1;
+.temp-block {
+  flex-direction: column;
+  text-align: center;
 }
 
-.temperature span {
+.temp {
+  padding-top: 15px;
+  font-size: 170px;
+}
+
+.temp span {
   font-size: 90px;
   position: relative;
   top: -50px;
   left: -15px;
 }
 
+.min-temp {
+  font-size: 20px;
+  position: relative;
+  top: -20px;
+  left: -70px;
+}
+
+.max-temp {
+  font-size: 20px;
+  position: relative;
+  top: -52px;
+  left: 45px;
+}
+
 .weather-type {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 55px;
+  padding-top: 80px;
 }
 
 .weather-main {
-  font-size: 20px;
+  font-size: 30px;
   text-transform: uppercase;
 }
 
@@ -59,12 +78,52 @@
 }
 
 .details-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
   border-radius: 5px;
   height: 400px;
-  width: 400px;
   padding: 15px;
-  border: 1px solid white;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   text-transform: uppercase;
+  padding-right: 80px;
+}
+
+.details-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 115px;
+  height: 115px;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+}
+
+.details-item span {
+  font-size: 35px;
+}
+
+.details-button {
+  max-width: 70px;
+  min-width: 70px;
+  height: 365px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-transform: uppercase;
+}
+
+.details-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.details-button:focus {
+  outline: none;
+  border: none;
 }

@@ -14,12 +14,12 @@ export function fetchWeather(cityName) {
         return res.json();
       })
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         if (result.message) {
           dispatch({
             type: 'FETCH_WEATHER_SUCCESS',
             payload: {
-              error: result.message,
+              errorMessage: result.message,
             },
           });
         } else {
@@ -38,7 +38,7 @@ export function fetchWeather(cityName) {
               humidity: result.main.humidity,
               pressure: result.main.pressure,
               visibility: result.visibility,
-              error: '',
+              errorMessage: '',
             }),
           });
         }

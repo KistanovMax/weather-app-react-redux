@@ -11,9 +11,10 @@
   text-align: center;
   border-radius: 10px;
   margin-top: 15px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   width: 100%;
+  text-transform: uppercase;
 }
 
 .search:hover {
@@ -24,12 +25,10 @@
 .search:focus {
   outline: none;
   border: none;
-  text-transform: uppercase;
 }
 
 .search::placeholder {
   color: white;
-  text-transform: uppercase;
 }
 
 .search:focus::placeholder {
